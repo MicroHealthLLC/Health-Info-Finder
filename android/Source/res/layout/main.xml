@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:id="@+id/main"
+	android:background="#FFFFFF">
+	<ImageView android:id="@+id/setting" android:layout_width="45dp" android:paddingTop="10dp"
+			android:layout_height="34dp" android:layout_alignParentRight="true"
+			android:layout_alignParentTop="true" android:paddingRight="15dp"
+			android:src="@drawable/setting" />
+	
+	<RelativeLayout android:id="@+id/header"
+		android:layout_width="301dp" android:layout_height="109dp"  android:layout_marginTop="40dp" 
+		android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+		android:layout_alignParentLeft="true" android:layout_alignParentRight="true">
+		<ImageView android:layout_width="301dp"
+			android:layout_centerHorizontal="true" android:layout_height="109dp"
+			android:src="@drawable/logo"/>
+		
+	</RelativeLayout>
+
+	<RelativeLayout android:id="@+id/relativeLayout1"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true" android:layout_alignParentRight="true"
+		android:layout_below="@+id/header" android:layout_centerHorizontal="true">
+		<LinearLayout android:id="@+id/relativeLayout3" android:layout_marginTop="5dp"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:background="@drawable/bck"
+			android:paddingLeft="5dp" android:paddingRight="5dp" android:paddingBottom="5dp"  android:paddingTop="5dp" android:gravity="center_horizontal">
+			<RelativeLayout android:layout_below="@+id/search_txt"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:orientation="horizontal" android:gravity="center_horizontal"
+				android:layout_centerHorizontal="true">
+				<RelativeLayout android:layout_width="fill_parent" android:id="@+id/edbox"
+					android:layout_height="wrap_content" android:background="@drawable/editbox" android:orientation="horizontal" android:layout_toLeftOf="@+id/search_btn">
+					<ImageView android:id="@+id/history_relative"
+						android:layout_width="35dp" android:layout_height="28dp"
+						android:layout_marginLeft="2dp" android:src="@drawable/history"
+						android:layout_alignParentLeft="true">
+					</ImageView>
+					<AutoCompleteTextView android:id="@+id/search_txt" android:layout_centerVertical="true"
+						android:layout_width="fill_parent" android:layout_height="wrap_content"
+						android:hint="@string/search_hint" android:background="@null"
+						android:paddingLeft="5dp" android:layout_marginLeft="10dp"  android:imeOptions="actionSearch"
+						android:layout_marginRight="5dp" android:singleLine="true"  android:textSize="14sp"
+						android:layout_toLeftOf="@+id/clear" android:layout_toRightOf="@+id/history_relative">
+					</AutoCompleteTextView>
+					<ImageView android:id="@+id/clear"
+						android:layout_width="17dp" android:layout_height="17dp"
+						android:layout_marginLeft="2dp" android:src="@drawable/cancel"
+						android:layout_alignParentRight="true" android:layout_centerVertical="true">
+					</ImageView>
+				</RelativeLayout>
+				<ImageView android:id="@+id/search_btn"
+						android:layout_width="49dp" android:layout_height="19dp"
+						android:layout_alignParentRight="true" android:paddingRight="15dp"
+						android:paddingLeft="20dp" android:layout_centerVertical="true"
+						android:src="@drawable/mike" />
+			</RelativeLayout>
+			<LinearLayout android:layout_below="@+id/search_txt"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:orientation="horizontal" android:gravity="center_horizontal"
+				android:layout_centerHorizontal="true">
+				<TextView android:id="@+id/datafrom" android:layout_width="wrap_content" android:paddingTop="5dp"
+					android:layout_height="wrap_content" android:text="@string/information"
+					android:textColor="#1B3E7B" android:textSize="10sp" android:textStyle="bold"					/>
+				<TextView android:id="@+id/site" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/medlineurl"
+					android:textColor="#1B3E7B" android:textSize="10sp" android:textStyle="bold"
+					/>
+			</LinearLayout>
+		</LinearLayout>
+	</RelativeLayout>
+
+	<WebView android:id="@+id/health_content" android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:layout_above="@+id/footer"
+		android:layout_below="@+id/relativeLayout1" android:visibility="visible"
+		android:layout_alignParentLeft="true" android:layout_alignParentRight="true"
+		android:layout_centerHorizontal="true" android:scrollbars="none" />
+
+	<RelativeLayout android:id="@+id/footer"
+		android:layout_width="fill_parent" android:layout_height="40dp"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true" android:visibility="gone"
+		android:background="@drawable/backgr">
+		<ImageView android:id="@+id/zoom" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentRight="true"
+			android:layout_centerVertical="true" android:layout_marginRight="10dp"
+			android:src="@drawable/zoom" />
+
+		<ImageView android:id="@+id/share" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerVertical="true"
+			android:layout_marginRight="10dp" android:layout_toLeftOf="@+id/zoom"
+			android:src="@drawable/share" />
+		<ImageView android:id="@+id/back" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+			android:layout_marginLeft="10dip" android:layout_centerVertical="true"
+			android:src="@drawable/back_img" />
+		<ImageView android:id="@+id/next" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_centerVertical="true"
+			android:layout_marginLeft="5dp" android:layout_toRightOf="@+id/back"
+			android:src="@drawable/next_img" />
+		<ImageView android:id="@+id/setting_bottom"
+			android:layout_width="40dp" android:layout_height="51dp"
+			android:layout_centerVertical="true" android:layout_marginRight="10dp"
+			android:layout_toLeftOf="@+id/share" android:src="@drawable/setting_bottom1" />
+
+	</RelativeLayout>
+	<RelativeLayout android:id="@+id/bottomup"
+		android:layout_width="fill_parent" android:layout_height="185dp"
+
+		android:layout_centerHorizontal="true" android:background="#000000"
+		android:visibility="gone" android:layout_alignParentBottom="true">
+
+		<ImageView android:id="@+id/share_cancel"
+			android:layout_width="wrap_content" android:layout_height="50dp"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentRight="true" android:layout_marginBottom="10dp"
+			android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+			android:src="@drawable/cancle" />
+
+		<ImageView android:id="@+id/share_email"
+			android:layout_width="wrap_content" android:layout_height="50dp"
+			android:layout_above="@+id/share_cancel"
+			android:layout_centerHorizontal="true" android:layout_marginBottom="8dp"
+			android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+			android:src="@drawable/email" />
+
+		<ImageView android:id="@+id/share_browser"
+			android:layout_width="wrap_content" android:layout_height="55dp"
+			android:layout_above="@+id/share_email"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentRight="true" android:layout_marginBottom="5dp"
+			android:layout_marginLeft="50dp" android:layout_marginRight="50dp"
+			android:src="@drawable/browser" />
+
+	</RelativeLayout>
+
+	<ImageView android:id="@+id/zoom_chk" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true" android:src="@drawable/zoom_chk"
+		android:visibility="gone">
+
+	</ImageView>
+	<ListView android:id="@+id/list" android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:layout_above="@+id/footer"
+		android:layout_below="@+id/relativeLayout1" android:scrollingCache="true"
+		android:layout_centerHorizontal="true" android:visibility="visible">
+
+	</ListView>
+
+</RelativeLayout>
